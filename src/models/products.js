@@ -15,7 +15,7 @@ const findProduct = (query) => {
     let totalQuery =
       "select count(*) as total_products from products p join uom u on p.uom_id = u.id WHERE p.on_deleted = false";
     let sqlQuery =
-      "SELECT p.id , p.name , p.price , p.description ,u.name as uom , p.created_at, p.on_deleted FROM products p JOIN uom u on p.uom_id = u.id WHERE p.on_deleted = false";
+      "SELECT p.id ,p.code, p.name , p.price , p.description ,u.name as uom , p.created_at, p.on_deleted FROM products p JOIN uom u on p.uom_id = u.id WHERE p.on_deleted = false";
     if (!name) {
       sqlQuery += " order by p." + sort + " " + order + " LIMIT $1 OFFSET $2";
       arr.push(parseInt(limit), offset);
