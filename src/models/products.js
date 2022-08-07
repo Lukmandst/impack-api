@@ -7,7 +7,7 @@ const findProduct = (query) => {
       order = "desc",
       sort = "created_at",
       page = 1,
-      limit = 5,
+      limit = 10,
     } = query;
     const offset = (parseInt(page) - 1) * parseInt(limit);
     let totalParam = [];
